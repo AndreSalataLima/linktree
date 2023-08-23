@@ -16,4 +16,10 @@ class Users::DeviseController < ApplicationController
 
   self.responder = Responder
   respond_to :html, :turbo_stream
+
+  private
+    def user_params
+      params.require(:user).permit(:email_address, :password, :avatar)
+    end
+
 end

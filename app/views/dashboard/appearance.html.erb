@@ -1,5 +1,6 @@
 <div class="contain">
   <h1 style="text-align:center;">Appearance</h1>
+  <%= current_user.avatar.attached? %>
   <%= simple_form_for(current_user,
     url:registration_path(current_user),
     html: { method: :put },
