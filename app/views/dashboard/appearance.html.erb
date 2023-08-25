@@ -1,6 +1,5 @@
 <div class="contain">
   <h1 style="text-align:center;">Appearance</h1>
-  <%= current_user.avatar.attached? %>
   <%= simple_form_for(current_user,
     url:registration_path(current_user),
     html: { method: :put },
@@ -10,6 +9,7 @@
         <div class='row mt-5'>
           <div class='col-4'>
             <%= image_tag(current_user.avatar, class:"avatar-image") if current_user.avatar.attached? %>
+            <img src="assets/profile_pic.png" alt="profile picture" class="avatar-image">
           </div>
           <div class='col-4'>
             <%= f.input :avatar, required:false, label: false%>
